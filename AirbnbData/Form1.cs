@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AirbnbData
 {
-    public partial class Form1 : Form
+    public partial class frmData : Form
     {
-        public Form1()
+        public frmData()
         {
             InitializeComponent();
         }

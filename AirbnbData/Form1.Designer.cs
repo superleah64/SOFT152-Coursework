@@ -1,6 +1,6 @@
 ﻿namespace AirbnbData
 {
-    partial class Form1
+    partial class frmData
     {
         /// <summary>
         /// Required designer variable.
@@ -102,7 +102,7 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // frmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,7 +114,7 @@
             this.Controls.Add(this.lstProperties);
             this.Controls.Add(this.lstNeighbourhoods);
             this.Controls.Add(this.lstDistricts);
-            this.Name = "Form1";
+            this.Name = "frmData";
             this.Text = "Airbnb Data Viewer";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
