@@ -63,9 +63,29 @@ namespace AirbnbData.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AirbnbLogo {
+        internal static System.Drawing.Bitmap Airbnb_Data_Viewer_Title {
             get {
-                object obj = ResourceManager.GetObject("AirbnbLogo", resourceCulture);
+                object obj = ResourceManager.GetObject("Airbnb Data Viewer Title", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Airbnb_Data_Viewer_Title1 {
+            get {
+                object obj = ResourceManager.GetObject("Airbnb Data Viewer Title1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Districts_Button {
+            get {
+                object obj = ResourceManager.GetObject("Districts Button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
