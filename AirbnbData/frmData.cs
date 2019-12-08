@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,20 +69,28 @@ namespace AirbnbData
         {
             // when you hover over the image it changes to a paler version of the image
             // click to load the districts into the listbox
-        }
 
-        
+            // create the filestream
+            StreamReader inputData = new StreamReader("Data.txt");
+
+        }
 
         private void btnLoadNbhs_Click(object sender, EventArgs e)
         {
             // when you hover over the image it changes to a paler version of the image
             // click to load the neighbourhoods into the listbox
+
+            // create the filestream
+            StreamReader inputData = new StreamReader("Data.txt");
         }
 
         private void btnLoadProps_Click(object sender, EventArgs e)
         {
             // when you hover over the image it changes to a paler version of the image
             // click to load the properties into the listbox
+
+            // create the filestream
+            StreamReader inputData = new StreamReader("Data.txt");
         }
 
         private void lstDistricts_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,12 +115,12 @@ namespace AirbnbData
 
         private void lstNbhData_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // this listbox displays the details of the selected
+            // this listbox displays the details of the selected neighbourhood
         }
 
         private void lstPropData_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // this listbox displays the details of the selected
+            // this listbox displays the details of the selected properties
         }
     }
 }

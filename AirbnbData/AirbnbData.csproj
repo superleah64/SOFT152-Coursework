@@ -93,5 +93,8 @@
   <ItemGroup>
     <None Include="Resources\Airbnb Data Viewer Title1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
