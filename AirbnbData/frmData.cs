@@ -60,8 +60,7 @@ namespace AirbnbData
 
                         }
 
-                        Neighbourhood TempNbh_Array = new Neighbourhood(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
-                                        TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
+                        Neighbourhood TempNbh_Array = new Neighbourhood(TempNbhName, Convert.ToInt32(TempNumProp));
 
                         int newNbhSize = Arrays.NbhData.Length;
                         Array.Resize(ref Arrays.NbhData, newNbhSize + 1);
@@ -69,10 +68,9 @@ namespace AirbnbData
 
                     }
 
-                    District TempDist_Array = new District(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
-                                        TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
+                    District TempDist_Array = new District(TempDistName, Convert.ToInt32(TempNumNbh));
 
-                    int newDistSize = Arrays.DistData.Length;
+0                    int newDistSize = Arrays.DistData.Length;
                     Array.Resize(ref Arrays.DistData, newDistSize + 1);
                     Arrays.DistData[newDistSize] = TempDist_Array;
                 }
