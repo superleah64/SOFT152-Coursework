@@ -12,9 +12,9 @@ namespace AirbnbData
         private string propName;
         private string hostID;
         private string hostName;
-        private int numProp;
-        private int lati;
-        private int longi;
+        private int numPropH;
+        private string lati;
+        private string longi;
         private string roomType;
         private int price;
         private int minNights;
@@ -22,20 +22,21 @@ namespace AirbnbData
 
 
         public Property(string thePropID, string thePropName,
-            string theHostID, string theHostName, string theNumProp, string theLati,
-            string theLongi, string theRoomType, string thePrice, string theMinNights, string theDays)
+            string theHostID, string theHostName, int theNumPropH, string theLati,
+            string theLongi, string theRoomType, int thePrice, int theMinNights, int theDays)
         {
             propID = thePropID;
             propName = thePropName;
             hostID = theHostID;
             hostName = theHostName;
-            setNumProp(theNumProp);
-            setLati(theLati);
-            setLongi(theLongi);
+            numPropH = theNumPropH;
+            lati = theLati;
+            longi = theLongi;
             roomType = theRoomType;
-            setPrice(thePrice);
-            setMinNights(theMinNights);
-            setDays(theDays);
+            price = thePrice;
+            minNights = theMinNights;
+            days = theDays;
+
         }//end constructor
 
         //all getter methods
@@ -55,15 +56,15 @@ namespace AirbnbData
         {
             return hostName;
         }
-        public int getNumProp()
+        public int getNumPropH()
         {
-            return numProp;
+            return numPropH;
         }
-        public int getLati()
+        public string getLati()
         {
             return lati;
         }
-        public int getLongi()
+        public string getLongi()
         {
             return longi;
         }
@@ -103,11 +104,11 @@ namespace AirbnbData
             hostName = inHostName;
         }
 
-        public void setNumProp(string inNumProp)
+        public void setNumPropH(string inNumPropH)
         {
             try
             {
-                numProp = Convert.ToInt32(inNumProp);
+                numPropH = Convert.ToInt32(inNumPropH);
             }
             catch (FormatException e)
             {
@@ -117,28 +118,12 @@ namespace AirbnbData
         }
         public void setLati(string inLati)
         {
-            try
-            {
-                lati = Convert.ToInt32(inLati);
-            }
-            catch (FormatException e)
-            {
-                System.Windows.Forms.MessageBox.Show("Error:" +
-                        e.Message + " Please input a valid latitude.");
-            }
+            lati = inLati;
         }
 
         public void setLongi(string inLongi)
         {
-            try
-            {
-                longi = Convert.ToInt32(inLongi);
-            }
-            catch (FormatException e)
-            {
-                System.Windows.Forms.MessageBox.Show("Error:" +
-                        e.Message + " Please input a valid longitude.");
-            }
+            longi = inLongi;
         }
 
         public void setRoomType(string inRoomType)

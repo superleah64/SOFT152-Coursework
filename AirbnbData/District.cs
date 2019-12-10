@@ -17,7 +17,7 @@ namespace AirbnbData
         public District(string inDistName, int inDistNumNbh, Neighbourhood[] inDistNbh)
         {
             distName = inDistName;
-            distNumNbh = inDistNumNbh;
+            distNumNbh = inDistNumNbh;   
             distAllNbh = inDistNbh; //pass all neighbourhoods in
         }
 

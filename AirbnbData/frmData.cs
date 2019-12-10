@@ -11,19 +11,80 @@ using System.Windows.Forms;
 
 namespace AirbnbData
 {
+
+
     public partial class frmMain : Form
     {
         public frmMain()
         {
             InitializeComponent();
+
+            // read the data in from the text file
+            using (StreamReader AirbnbData = new StreamReader("Data.txt"))
+            {
+                // create a while loop
+                while (!AirbnbData.EndOfStream)
+                {
+                    string TempDistName = AirbnbData.ReadLine();
+                    string TempNumNbh = AirbnbData.ReadLine();
+                    int NumNbh = Convert.ToInt32(TempNumNbh);
+                    Neighbourhood[] nbh_array = new Neighbourhood[NumNbh];
+
+                    for (int a = 0; a < NumNbh; a++)
+                    {
+                        string TempNbhName = AirbnbData.ReadLine();
+                        string TempNumProp = AirbnbData.ReadLine();
+                        int NumProp = Convert.ToInt32(TempNumProp);
+                        Property[] Prop_Array = new Property[NumProp];
+
+                        for (int b = 0; b < NumProp; b++)
+                        {
+                            string TempPropID = AirbnbData.ReadLine();
+                            string TempPropName = AirbnbData.ReadLine();
+                            string TempHostID = AirbnbData.ReadLine();
+                            string TempHostName = AirbnbData.ReadLine();
+                            string TempNumPropH = AirbnbData.ReadLine();
+                            string TempLati = AirbnbData.ReadLine();
+                            string TempLongi = AirbnbData.ReadLine();
+                            string TempRoomType = AirbnbData.ReadLine();
+                            string TempPrice = AirbnbData.ReadLine();
+                            string TempMinNights = AirbnbData.ReadLine();
+                            string TempDays = AirbnbData.ReadLine();
+
+                            Property TempProp_Array = new Property(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
+                                                                    TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
+
+                            int newPropSize = Arrays.PropData.Length;
+                            Array.Resize(ref Arrays.PropData, newPropSize + 1);
+                            Arrays.PropData[newPropSize] = TempProp_Array;
+
+                        }
+
+                        Neighbourhood TempNbh_Array = new Neighbourhood(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
+                                        TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
+
+                        int newNbhSize = Arrays.NbhData.Length;
+                        Array.Resize(ref Arrays.NbhData, newNbhSize + 1);
+                        Arrays.NbhData[newNbhSize] = TempNbh_Array;
+
+                    }
+
+                    District TempDist_Array = new District(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
+                                        TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
+
+                    int newDistSize = Arrays.DistData.Length;
+                    Array.Resize(ref Arrays.DistData, newDistSize + 1);
+                    Arrays.DistData[newDistSize] = TempDist_Array;
+                }
+            }
         }
 
         private void BtnAddDist_Click(object sender, EventArgs e)
         {
             // check no district selected 
-            //if Ok then display form to get new  district name
+            // if Ok then display form to get new  district name
             // create a new district object with a zero no. of nhbs
-            // add the object to the abb_array
+            // add the object to the airbnb_array
         }
 
         private void BtnAddNbh_Click(object sender, EventArgs e)
@@ -70,7 +131,7 @@ namespace AirbnbData
         private void btnLoadDists_Click(object sender, EventArgs e)
         {
             // this will show the districts in the list box
-            // by looping trhrough the airbnb_array using the getters from the district object 
+            // by looping through the airbnb_array using the getters from the district object
         }
 
         private void btnLoadNbhs_Click(object sender, EventArgs e)

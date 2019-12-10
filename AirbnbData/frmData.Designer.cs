@@ -205,7 +205,7 @@
             this.Controls.Add(this.lstNeighbourhoods);
             this.Controls.Add(this.lstDistricts);
             this.Name = "frmMain";
-            this.Text = "Airbnb Data Viewer";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).EndInit();
