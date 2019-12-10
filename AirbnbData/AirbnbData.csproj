@@ -54,6 +54,12 @@
     <Compile Include="frmData.Designer.cs">
       <DependentUpon>frmData.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPropMaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPropMaint.Designer.cs">
+      <DependentUpon>frmPropMaint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Neighbourhood.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmData.resx">
       <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPropMaint.resx">
+      <DependentUpon>frmPropMaint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

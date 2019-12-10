@@ -32,25 +32,20 @@
             this.lstDistricts = new System.Windows.Forms.ListBox();
             this.lstNeighbourhoods = new System.Windows.Forms.ListBox();
             this.lstProperties = new System.Windows.Forms.ListBox();
-            this.lstDistData = new System.Windows.Forms.ListBox();
-            this.lstNbhData = new System.Windows.Forms.ListBox();
-            this.lstPropData = new System.Windows.Forms.ListBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnAddDist = new System.Windows.Forms.Button();
             this.btnAddNbh = new System.Windows.Forms.Button();
-            this.btnAddProp = new System.Windows.Forms.Button();
             this.btnEditDist = new System.Windows.Forms.Button();
-            this.btnEditProp = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnEditNbh = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLoadDists = new System.Windows.Forms.PictureBox();
-            this.btnLoadNbhs = new System.Windows.Forms.PictureBox();
+            this.btnPropMaint = new System.Windows.Forms.Button();
             this.btnLoadProps = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).BeginInit();
+            this.btnLoadNbhs = new System.Windows.Forms.PictureBox();
+            this.btnLoadDists = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstDistricts
@@ -58,7 +53,7 @@
             this.lstDistricts.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDistricts.FormattingEnabled = true;
             this.lstDistricts.ItemHeight = 15;
-            this.lstDistricts.Location = new System.Drawing.Point(99, 193);
+            this.lstDistricts.Location = new System.Drawing.Point(112, 234);
             this.lstDistricts.Name = "lstDistricts";
             this.lstDistricts.Size = new System.Drawing.Size(282, 199);
             this.lstDistricts.TabIndex = 0;
@@ -69,7 +64,7 @@
             this.lstNeighbourhoods.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstNeighbourhoods.FormattingEnabled = true;
             this.lstNeighbourhoods.ItemHeight = 15;
-            this.lstNeighbourhoods.Location = new System.Drawing.Point(407, 193);
+            this.lstNeighbourhoods.Location = new System.Drawing.Point(420, 234);
             this.lstNeighbourhoods.Name = "lstNeighbourhoods";
             this.lstNeighbourhoods.Size = new System.Drawing.Size(282, 199);
             this.lstNeighbourhoods.TabIndex = 1;
@@ -80,99 +75,11 @@
             this.lstProperties.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstProperties.FormattingEnabled = true;
             this.lstProperties.ItemHeight = 15;
-            this.lstProperties.Location = new System.Drawing.Point(714, 193);
+            this.lstProperties.Location = new System.Drawing.Point(727, 234);
             this.lstProperties.Name = "lstProperties";
             this.lstProperties.Size = new System.Drawing.Size(282, 199);
             this.lstProperties.TabIndex = 2;
             this.lstProperties.SelectedIndexChanged += new System.EventHandler(this.lstProperties_SelectedIndexChanged);
-            // 
-            // lstDistData
-            // 
-            this.lstDistData.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstDistData.FormattingEnabled = true;
-            this.lstDistData.ItemHeight = 15;
-            this.lstDistData.Location = new System.Drawing.Point(99, 401);
-            this.lstDistData.Name = "lstDistData";
-            this.lstDistData.Size = new System.Drawing.Size(282, 139);
-            this.lstDistData.TabIndex = 10;
-            this.lstDistData.SelectedIndexChanged += new System.EventHandler(this.lstDistData_SelectedIndexChanged);
-            // 
-            // lstNbhData
-            // 
-            this.lstNbhData.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstNbhData.FormattingEnabled = true;
-            this.lstNbhData.ItemHeight = 15;
-            this.lstNbhData.Location = new System.Drawing.Point(407, 401);
-            this.lstNbhData.Name = "lstNbhData";
-            this.lstNbhData.Size = new System.Drawing.Size(282, 139);
-            this.lstNbhData.TabIndex = 11;
-            this.lstNbhData.SelectedIndexChanged += new System.EventHandler(this.lstNbhData_SelectedIndexChanged);
-            // 
-            // lstPropData
-            // 
-            this.lstPropData.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstPropData.FormattingEnabled = true;
-            this.lstPropData.ItemHeight = 15;
-            this.lstPropData.Location = new System.Drawing.Point(714, 401);
-            this.lstPropData.Name = "lstPropData";
-            this.lstPropData.Size = new System.Drawing.Size(282, 139);
-            this.lstPropData.TabIndex = 12;
-            this.lstPropData.SelectedIndexChanged += new System.EventHandler(this.lstPropData_SelectedIndexChanged);
-            // 
-            // btnAddDist
-            // 
-            this.btnAddDist.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDist.Location = new System.Drawing.Point(193, 557);
-            this.btnAddDist.Name = "btnAddDist";
-            this.btnAddDist.Size = new System.Drawing.Size(90, 25);
-            this.btnAddDist.TabIndex = 13;
-            this.btnAddDist.Text = "Add";
-            this.btnAddDist.UseVisualStyleBackColor = true;
-            this.btnAddDist.Click += new System.EventHandler(this.BtnAddDist_Click);
-            // 
-            // btnAddNbh
-            // 
-            this.btnAddNbh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNbh.Location = new System.Drawing.Point(405, 557);
-            this.btnAddNbh.Name = "btnAddNbh";
-            this.btnAddNbh.Size = new System.Drawing.Size(139, 25);
-            this.btnAddNbh.TabIndex = 14;
-            this.btnAddNbh.Text = "Add";
-            this.btnAddNbh.UseVisualStyleBackColor = true;
-            this.btnAddNbh.Click += new System.EventHandler(this.BtnAddNbh_Click);
-            // 
-            // btnAddProp
-            // 
-            this.btnAddProp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProp.Location = new System.Drawing.Point(712, 557);
-            this.btnAddProp.Name = "btnAddProp";
-            this.btnAddProp.Size = new System.Drawing.Size(139, 25);
-            this.btnAddProp.TabIndex = 15;
-            this.btnAddProp.Text = "Add";
-            this.btnAddProp.UseVisualStyleBackColor = true;
-            this.btnAddProp.Click += new System.EventHandler(this.BtnAddProp_Click);
-            // 
-            // btnEditDist
-            // 
-            this.btnEditDist.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditDist.Location = new System.Drawing.Point(289, 557);
-            this.btnEditDist.Name = "btnEditDist";
-            this.btnEditDist.Size = new System.Drawing.Size(90, 25);
-            this.btnEditDist.TabIndex = 16;
-            this.btnEditDist.Text = "Edit/Delete";
-            this.btnEditDist.UseVisualStyleBackColor = true;
-            this.btnEditDist.Click += new System.EventHandler(this.BtnEditDist_Click);
-            // 
-            // btnEditProp
-            // 
-            this.btnEditProp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProp.Location = new System.Drawing.Point(857, 557);
-            this.btnEditProp.Name = "btnEditProp";
-            this.btnEditProp.Size = new System.Drawing.Size(139, 25);
-            this.btnEditProp.TabIndex = 18;
-            this.btnEditProp.Text = "Edit";
-            this.btnEditProp.UseVisualStyleBackColor = true;
-            this.btnEditProp.Click += new System.EventHandler(this.BtnEditProp_Click);
             // 
             // btnExit
             // 
@@ -185,96 +92,125 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // btnSearch
+            // btnAddDist
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(97, 557);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(90, 25);
-            this.btnSearch.TabIndex = 25;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnAddDist.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDist.Location = new System.Drawing.Point(182, 439);
+            this.btnAddDist.Name = "btnAddDist";
+            this.btnAddDist.Size = new System.Drawing.Size(139, 25);
+            this.btnAddDist.TabIndex = 13;
+            this.btnAddDist.Text = "Add District";
+            this.btnAddDist.UseVisualStyleBackColor = true;
+            this.btnAddDist.Click += new System.EventHandler(this.BtnAddDist_Click);
+            // 
+            // btnAddNbh
+            // 
+            this.btnAddNbh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNbh.Location = new System.Drawing.Point(498, 439);
+            this.btnAddNbh.Name = "btnAddNbh";
+            this.btnAddNbh.Size = new System.Drawing.Size(139, 25);
+            this.btnAddNbh.TabIndex = 14;
+            this.btnAddNbh.Text = "Add Neighbourhood";
+            this.btnAddNbh.UseVisualStyleBackColor = true;
+            this.btnAddNbh.Click += new System.EventHandler(this.BtnAddNbh_Click);
+            // 
+            // btnEditDist
+            // 
+            this.btnEditDist.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditDist.Location = new System.Drawing.Point(182, 470);
+            this.btnEditDist.Name = "btnEditDist";
+            this.btnEditDist.Size = new System.Drawing.Size(139, 25);
+            this.btnEditDist.TabIndex = 16;
+            this.btnEditDist.Text = "Edit District";
+            this.btnEditDist.UseVisualStyleBackColor = true;
+            this.btnEditDist.Click += new System.EventHandler(this.BtnEditDist_Click);
             // 
             // btnEditNbh
             // 
             this.btnEditNbh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditNbh.Location = new System.Drawing.Point(550, 557);
+            this.btnEditNbh.Location = new System.Drawing.Point(498, 470);
             this.btnEditNbh.Name = "btnEditNbh";
             this.btnEditNbh.Size = new System.Drawing.Size(139, 25);
             this.btnEditNbh.TabIndex = 27;
-            this.btnEditNbh.Text = "Edit";
+            this.btnEditNbh.Text = "Edit Neighbourhood";
             this.btnEditNbh.UseVisualStyleBackColor = true;
             this.btnEditNbh.Click += new System.EventHandler(this.BtnEditNbh_Click);
             // 
-            // pictureBox1
+            // btnPropMaint
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(181, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(745, 83);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnLoadDists
-            // 
-            this.btnLoadDists.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadDists.Image")));
-            this.btnLoadDists.Location = new System.Drawing.Point(169, 135);
-            this.btnLoadDists.Name = "btnLoadDists";
-            this.btnLoadDists.Size = new System.Drawing.Size(152, 52);
-            this.btnLoadDists.TabIndex = 29;
-            this.btnLoadDists.TabStop = false;
-            this.btnLoadDists.Click += new System.EventHandler(this.btnLoadDists_Click);
-            // 
-            // btnLoadNbhs
-            // 
-            this.btnLoadNbhs.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadNbhs.Image")));
-            this.btnLoadNbhs.Location = new System.Drawing.Point(473, 135);
-            this.btnLoadNbhs.Name = "btnLoadNbhs";
-            this.btnLoadNbhs.Size = new System.Drawing.Size(151, 52);
-            this.btnLoadNbhs.TabIndex = 30;
-            this.btnLoadNbhs.TabStop = false;
-            this.btnLoadNbhs.Click += new System.EventHandler(this.btnLoadNbhs_Click);
+            this.btnPropMaint.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPropMaint.Location = new System.Drawing.Point(773, 439);
+            this.btnPropMaint.Name = "btnPropMaint";
+            this.btnPropMaint.Size = new System.Drawing.Size(180, 45);
+            this.btnPropMaint.TabIndex = 32;
+            this.btnPropMaint.Text = "Property Maintenance";
+            this.btnPropMaint.UseVisualStyleBackColor = true;
+            this.btnPropMaint.Click += new System.EventHandler(this.BtnPropMaint_Click);
             // 
             // btnLoadProps
             // 
             this.btnLoadProps.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadProps.Image")));
-            this.btnLoadProps.Location = new System.Drawing.Point(788, 135);
+            this.btnLoadProps.Location = new System.Drawing.Point(801, 176);
             this.btnLoadProps.Name = "btnLoadProps";
             this.btnLoadProps.Size = new System.Drawing.Size(152, 52);
             this.btnLoadProps.TabIndex = 31;
             this.btnLoadProps.TabStop = false;
             this.btnLoadProps.Click += new System.EventHandler(this.btnLoadProps_Click);
             // 
+            // btnLoadNbhs
+            // 
+            this.btnLoadNbhs.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadNbhs.Image")));
+            this.btnLoadNbhs.Location = new System.Drawing.Point(486, 176);
+            this.btnLoadNbhs.Name = "btnLoadNbhs";
+            this.btnLoadNbhs.Size = new System.Drawing.Size(151, 52);
+            this.btnLoadNbhs.TabIndex = 30;
+            this.btnLoadNbhs.TabStop = false;
+            this.btnLoadNbhs.Click += new System.EventHandler(this.btnLoadNbhs_Click);
+            // 
+            // btnLoadDists
+            // 
+            this.btnLoadDists.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadDists.Image")));
+            this.btnLoadDists.Location = new System.Drawing.Point(182, 176);
+            this.btnLoadDists.Name = "btnLoadDists";
+            this.btnLoadDists.Size = new System.Drawing.Size(152, 52);
+            this.btnLoadDists.TabIndex = 29;
+            this.btnLoadDists.TabStop = false;
+            this.btnLoadDists.Click += new System.EventHandler(this.btnLoadDists_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(238, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(745, 83);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 596);
+            this.ClientSize = new System.Drawing.Size(1230, 622);
+            this.Controls.Add(this.btnPropMaint);
             this.Controls.Add(this.btnLoadProps);
             this.Controls.Add(this.btnLoadNbhs);
             this.Controls.Add(this.btnLoadDists);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEditNbh);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnEditProp);
             this.Controls.Add(this.btnEditDist);
-            this.Controls.Add(this.btnAddProp);
             this.Controls.Add(this.btnAddNbh);
             this.Controls.Add(this.btnAddDist);
-            this.Controls.Add(this.lstPropData);
-            this.Controls.Add(this.lstNbhData);
-            this.Controls.Add(this.lstDistData);
             this.Controls.Add(this.lstProperties);
             this.Controls.Add(this.lstNeighbourhoods);
             this.Controls.Add(this.lstDistricts);
             this.Name = "frmMain";
             this.Text = "Airbnb Data Viewer";
             this.Load += new System.EventHandler(this.FrmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,21 +220,16 @@
         private System.Windows.Forms.ListBox lstDistricts;
         private System.Windows.Forms.ListBox lstNeighbourhoods;
         private System.Windows.Forms.ListBox lstProperties;
-        private System.Windows.Forms.ListBox lstDistData;
-        private System.Windows.Forms.ListBox lstNbhData;
-        private System.Windows.Forms.ListBox lstPropData;
-        private System.Windows.Forms.Button btnAddDist;
-        private System.Windows.Forms.Button btnAddNbh;
-        private System.Windows.Forms.Button btnAddProp;
-        private System.Windows.Forms.Button btnEditDist;
-        private System.Windows.Forms.Button btnEditProp;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnEditNbh;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnLoadDists;
         private System.Windows.Forms.PictureBox btnLoadNbhs;
         private System.Windows.Forms.PictureBox btnLoadProps;
+        private System.Windows.Forms.Button btnAddDist;
+        private System.Windows.Forms.Button btnAddNbh;
+        private System.Windows.Forms.Button btnEditDist;
+        private System.Windows.Forms.Button btnEditNbh;
+        private System.Windows.Forms.Button btnPropMaint;
     }
 }
 

@@ -20,107 +20,93 @@ namespace AirbnbData
 
         private void BtnAddDist_Click(object sender, EventArgs e)
         {
-            // open a prompt to add a district
+            // check no district selected 
+            //if Ok then display form to get new  district name
+            // create a new district object with a zero no. of nhbs
+            // add the object to the abb_array
         }
 
         private void BtnAddNbh_Click(object sender, EventArgs e)
         {
-            // open a prompt to add a neighbourhood
-        }
-
-        private void BtnAddProp_Click(object sender, EventArgs e)
-        {
-            // open a prompt to add a property
+            // make sure district is selected and nbh is not 
+            // if Ok then use inputbox to get new nbh name
+            // create a new nbh object with this name and zero properties
+            // add new nbh to district object using its setter
+            // unselect district 
         }
 
         private void BtnEditDist_Click(object sender, EventArgs e)
         {
-            // open a prompt to edit a district, make Delete button visible
+            // make sure a district has been selected
+            // if so display an input form showdialog mode to accept the new name 
+            // replace the data in the list with this new data 
+            // use district object setter to update the name
+            // make district list unselected
         }
 
         private void BtnEditNbh_Click(object sender, EventArgs e)
         {
-            // open a prompt to edit a neighbourhood
+            // make sure district and nbh are selected 
+            // if so display an input form for entering new nbh name
+            // change the name in the list
+            // use the nbh setter to update that nbh object 
+            // unselect the district and nbh lists
         }
 
-        private void BtnEditProp_Click(object sender, EventArgs e)
-        {
-            // open a prompt to edit a property
-        }
-
-       
         private void BtnExit_Click(object sender, EventArgs e)
         {
             // close the form
             this.Close();
+
+            //write the data from airbnb_array back to text file
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void TxtPropID_TextChanged(object sender, EventArgs e)
-        {
-            // select a piece of data from the data listbox and edit it in here
+            // use file dialog to locate textfile 
+            // read all text data into the abb_array
         }
 
         private void btnLoadDists_Click(object sender, EventArgs e)
         {
-            // when you hover over the image it changes to a paler version of the image
-            // click to load the districts into the listbox
-
-            // create the filestream
-            StreamReader inputData = new StreamReader("Data.txt");
-
+            // this will show the districts in the list box
+            // by looping trhrough the airbnb_array using the getters from the district object 
         }
 
         private void btnLoadNbhs_Click(object sender, EventArgs e)
         {
-            // when you hover over the image it changes to a paler version of the image
-            // click to load the neighbourhoods into the listbox
-
-            // create the filestream
-            StreamReader inputData = new StreamReader("Data.txt");
+            // if a district is selected display all nbh in that district using district objects getter for the number of nbh and nbh getters for data
         }
 
         private void btnLoadProps_Click(object sender, EventArgs e)
         {
-            // when you hover over the image it changes to a paler version of the image
-            // click to load the properties into the listbox
-
-            // create the filestream
-            StreamReader inputData = new StreamReader("Data.txt");
+            // show nbh properties using nbh objects getter for number of properties
+            // and property getters for property details 
         }
 
         private void lstDistricts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // this listbox reads in the district data from the text file
+
         }
 
         private void lstNeighbourhoods_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // this listbox reads in the neighbourhood data from the text file
+
         }
 
         private void lstProperties_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // this listbox reads in the property data from the text file
+
         }
 
-        private void lstDistData_SelectedIndexChanged(object sender, EventArgs e)
+        private void BtnPropMaint_Click(object sender, EventArgs e)
         {
-            // this listbox displays the details of the selected district
-        }
+            // make sure a dist and nbh are selected
 
-        private void lstNbhData_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // this listbox displays the details of the selected neighbourhood
-        }
+            // open the property maintenance form
+            frmPropMaint frm = new frmPropMaint();
 
-        private void lstPropData_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // this listbox displays the details of the selected properties
+            frm.Show();
         }
     }
 }
