@@ -57,23 +57,22 @@ namespace AirbnbData
                             int newPropSize = Arrays.PropData.Length;
                             Array.Resize(ref Arrays.PropData, newPropSize + 1);
                             Arrays.PropData[newPropSize] = TempProp_Array;
-
                         }
 
-                        Neighbourhood TempNbh_Array = new Neighbourhood(TempNbhName, Convert.ToInt32(TempNumProp));
+                        Neighbourhood TempNbh_Array = new Neighbourhood(TempNbhName, Convert.ToInt32(TempNumProp), Arrays.PropData);
 
                         int newNbhSize = Arrays.NbhData.Length;
                         Array.Resize(ref Arrays.NbhData, newNbhSize + 1);
                         Arrays.NbhData[newNbhSize] = TempNbh_Array;
-
                     }
 
-                    District TempDist_Array = new District(TempDistName, Convert.ToInt32(TempNumNbh));
-
-0                    int newDistSize = Arrays.DistData.Length;
+                    District TempDist_Array = new District(TempDistName, Convert.ToInt32(TempNumNbh), Arrays.NbhData);
+                    int newDistSize = Arrays.DistData.Length;
                     Array.Resize(ref Arrays.DistData, newDistSize + 1);
                     Arrays.DistData[newDistSize] = TempDist_Array;
                 }
+
+                AirbnbData.Close();
             }
         }
 
@@ -167,7 +166,7 @@ namespace AirbnbData
 
             frm.Show();
         }
-    }
+    }   
 }
 
 // we want to click a button to show the districts, then click a district to show the neighbourhoods, then click a neighbourhood to show the properties
