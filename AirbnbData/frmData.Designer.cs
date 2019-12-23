@@ -42,6 +42,8 @@
             this.btnLoadNbhs = new System.Windows.Forms.PictureBox();
             this.btnLoadDists = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnLoadData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).BeginInit();
@@ -186,11 +188,26 @@
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnLoadData
+            // 
+            this.btnLoadData.Location = new System.Drawing.Point(20, 26);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(118, 59);
+            this.btnLoadData.TabIndex = 33;
+            this.btnLoadData.Text = "Get Data";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.BtnLoadData_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 622);
+            this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.btnPropMaint);
             this.Controls.Add(this.btnLoadProps);
             this.Controls.Add(this.btnLoadNbhs);
@@ -230,6 +247,8 @@
         private System.Windows.Forms.Button btnEditDist;
         private System.Windows.Forms.Button btnEditNbh;
         private System.Windows.Forms.Button btnPropMaint;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnLoadData;
     }
 }
 
