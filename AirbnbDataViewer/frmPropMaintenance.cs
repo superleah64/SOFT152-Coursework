@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AirbnbData
+namespace AirbnbDataViewer
 {
-    public partial class frmUpdateDist : Form
+    public partial class frmPropMaintenance : Form
     {
-        public frmUpdateDist()
+        public frmPropMaintenance()
         {
             InitializeComponent();
         }

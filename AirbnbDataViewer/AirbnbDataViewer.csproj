@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CC172352-9DC1-4AF7-812E-93974554CA04}</ProjectGuid>
+    <ProjectGuid>{D68EB1C3-38F4-4975-A41D-BC28BD575EAB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AirbnbData</RootNamespace>
-    <AssemblyName>AirbnbData</AssemblyName>
+    <RootNamespace>AirbnbDataViewer</RootNamespace>
+    <AssemblyName>AirbnbDataViewer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,11 +48,17 @@
   <ItemGroup>
     <Compile Include="Arrays.cs" />
     <Compile Include="District.cs" />
-    <Compile Include="frmData.cs">
+    <Compile Include="frmAddDist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmData.Designer.cs">
-      <DependentUpon>frmData.cs</DependentUpon>
+    <Compile Include="frmAddDist.Designer.cs">
+      <DependentUpon>frmAddDist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNbh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNbh.Designer.cs">
+      <DependentUpon>frmAddNbh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditDist.cs">
       <SubType>Form</SubType>
@@ -67,35 +72,27 @@
     <Compile Include="frmEditNbh.Designer.cs">
       <DependentUpon>frmEditNbh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPropMaint.cs">
+    <Compile Include="frmPropMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPropMaint.Designer.cs">
-      <DependentUpon>frmPropMaint.cs</DependentUpon>
+    <Compile Include="frmPropMaintenance.Designer.cs">
+      <DependentUpon>frmPropMaintenance.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdateDist.cs">
+    <Compile Include="frmViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdateDist.Designer.cs">
-      <DependentUpon>frmUpdateDist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUpdateNbh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUpdateNbh.Designer.cs">
-      <DependentUpon>frmUpdateNbh.cs</DependentUpon>
+    <Compile Include="frmViewer.Designer.cs">
+      <DependentUpon>frmViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Neighbourhood.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmData.resx">
-      <DependentUpon>frmData.cs</DependentUpon>
+    <Compile Include="Property.cs" />
+    <EmbeddedResource Include="frmAddDist.resx">
+      <DependentUpon>frmAddDist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNbh.resx">
+      <DependentUpon>frmAddNbh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditDist.resx">
       <DependentUpon>frmEditDist.cs</DependentUpon>
@@ -103,17 +100,18 @@
     <EmbeddedResource Include="frmEditNbh.resx">
       <DependentUpon>frmEditNbh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPropMaint.resx">
-      <DependentUpon>frmPropMaint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdateDist.resx">
-      <DependentUpon>frmUpdateDist.cs</DependentUpon>
+    <EmbeddedResource Include="frmViewer.resx">
+      <DependentUpon>frmViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,18 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Airbnb Data Viewer Title.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Districts Button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Airbnb Data Viewer Title1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

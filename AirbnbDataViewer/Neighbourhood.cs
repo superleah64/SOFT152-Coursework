@@ -10,7 +10,7 @@ namespace AirbnbData
     {
         string nbhName;
         int nbhNumProp;
-        Property[] nbhAllProp; 
+        Property[] nbhAllProp;
 
         //constructor
         // Neighbourhood Order = nbhName nbhNumProp 

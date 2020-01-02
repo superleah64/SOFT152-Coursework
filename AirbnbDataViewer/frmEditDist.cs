@@ -15,10 +15,11 @@ namespace AirbnbData
         public frmEditDist()
         {
             InitializeComponent();
-            
+
         }
-        public static string SetTextValueDist = ""; 
-        private void BtnDone_Click(object sender, EventArgs e)
+        public static string SetTextValueDist = "";
+
+        private void btnDone_Click(object sender, EventArgs e)
         {
             if (txtEditDist.Text != "")
             {
@@ -27,6 +28,5 @@ namespace AirbnbData
             else MessageBox.Show("Please enter a new name.");
             this.Close();
         }
-        
     }
 }

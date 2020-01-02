@@ -18,7 +18,8 @@ namespace AirbnbData
 
         }
         public static string SetTextValueNbh = "";
-        private void BtnDone_Click(object sender, EventArgs e)
+
+        private void btnDone_Click(object sender, EventArgs e)
         {
             if (txtEditNbh.Text != "")
             {
@@ -27,6 +28,5 @@ namespace AirbnbData
             else MessageBox.Show("Please enter a name.");
             this.Close();
         }
-
     }
 }

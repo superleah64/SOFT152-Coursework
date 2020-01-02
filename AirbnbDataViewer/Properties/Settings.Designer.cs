@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AirbnbData.Properties
+namespace AirbnbDataViewer.Properties
 {
 
 
