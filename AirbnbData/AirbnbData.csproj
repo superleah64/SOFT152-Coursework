@@ -55,6 +55,18 @@
     <Compile Include="frmData.Designer.cs">
       <DependentUpon>frmData.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditDist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditDist.Designer.cs">
+      <DependentUpon>frmEditDist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditNbh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditNbh.Designer.cs">
+      <DependentUpon>frmEditNbh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPropMaint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmData.resx">
       <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditDist.resx">
+      <DependentUpon>frmEditDist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditNbh.resx">
+      <DependentUpon>frmEditNbh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPropMaint.resx">
       <DependentUpon>frmPropMaint.cs</DependentUpon>
