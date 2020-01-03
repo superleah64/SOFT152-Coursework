@@ -18,7 +18,6 @@ namespace AirbnbDataViewer
         {
             InitializeComponent();
         }
-        public event EventHandler Activated ;
         public static string SetTextValueProp = "";
         // sets all property values
 
@@ -106,22 +105,12 @@ namespace AirbnbDataViewer
 
         }
 
-        private void BtnDone_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             // show all property values 
             frmViewer frmView = new frmViewer();
+            txtPropID.Text = frmViewer.SetTextValuePropID;
             txtPropName.Text = frmViewer.SetTextValuePropName;
-        }
-        private void frmEditProp_Activated(Object sender, EventArgs e)
-        {
-
-           
-
         }
     }
 }

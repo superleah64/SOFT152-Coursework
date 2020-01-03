@@ -68,7 +68,7 @@
             this.btnDone.TabIndex = 39;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
-            this.btnDone.Click += new System.EventHandler(this.BtnDone_Click_1);
+
             // 
             // label10
             // 

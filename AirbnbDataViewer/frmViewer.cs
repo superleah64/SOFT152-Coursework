@@ -338,7 +338,18 @@ namespace AirbnbData
                 frmProp.Show();
             }
         }
-       public  static  string SetTextValuePropName = "xxxxxxx";
+
+        public static string SetTextValuePropID;
+        public static string SetTextValuePropName;
+        public static string SetTextValueHostID;
+        public static string SetTextValueHostName;
+        public static string SetTextValueNumProp;
+        public static string SetTextValueLati;
+        public static string SetTextValueLongi;
+        public static string SetTextValueRoomType;
+        public static string SetTextValuePrice;
+        public static string SetTextValueMinNights;
+        public static string SetTextValueDays;
 
         private void BtnEditProp_Click(object sender, EventArgs e)
         {
@@ -359,9 +370,15 @@ namespace AirbnbData
                 Arrays.PropData = nbh.getNbhAllProp();
                 Property prop = Arrays.PropData[propno];
 
-                // get data ready to carry to new form 
-               
+                // get data ready to carry to new form    
+                SetTextValuePropID = prop.getPropID();
                 SetTextValuePropName = prop.getPropName();
+                SetTextValueHostID = prop.getHostID();
+                SetTextValueHostName = prop.getPropName();
+                SetTextValueNumProp = prop.getNumPropH();
+
+
+
 
 
                 frmEditProp frmProp = new frmEditProp();
