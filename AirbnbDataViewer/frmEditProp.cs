@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AirbnbData;
+using AirbnbDataViewer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +18,13 @@ namespace AirbnbDataViewer
         {
             InitializeComponent();
         }
-
+        public event EventHandler Activated ;
         public static string SetTextValueProp = "";
         // sets all property values
+
+        private void frmEditProp_Load(object sender, EventArgs e)
+        {     }
+
         private void btnDone_Click(object sender, EventArgs e)
         {
             if (txtPropID.Text != "")
@@ -97,6 +103,24 @@ namespace AirbnbDataViewer
             }
             else MessageBox.Show("Please complete all fields.");
             this.Close();
+
+        }
+
+        private void BtnDone_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            // show all property values 
+            frmViewer frmView = new frmViewer();
+            txtPropName.Text = frmViewer.SetTextValuePropName;
+        }
+        private void frmEditProp_Activated(Object sender, EventArgs e)
+        {
+
+           
 
         }
     }

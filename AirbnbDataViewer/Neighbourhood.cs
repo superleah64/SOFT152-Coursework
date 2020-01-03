@@ -21,6 +21,13 @@ namespace AirbnbData
             nbhAllProp = inNbhProp;//pass all properties in
         }
 
+        // constructor for new neighbourhood 
+        public Neighbourhood(string inNbhName)
+        {
+            nbhName = inNbhName;
+            nbhNumProp = 0;
+            nbhAllProp = null;
+        }
 
         //setters
         public void setNbhName(string inNbhName)

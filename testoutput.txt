@@ -131,7 +131,7 @@ Private room
 177
 Manhattan
 1
-heaven's kitchen
+Hell's Kitchen
 2
 32786275
 Clean and Simple
@@ -155,8 +155,8 @@ Entire home/apt
 250
 3
 0
-Staten Island
-1
+Yoshi Island
+2
 Grymes Hill
 2
 33097219

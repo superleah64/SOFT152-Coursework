@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewer));
-            this.txtTemp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.btnLoadProps = new System.Windows.Forms.PictureBox();
@@ -52,14 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtTemp
-            // 
-            this.txtTemp.Location = new System.Drawing.Point(1124, 37);
-            this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(39, 20);
-            this.txtTemp.TabIndex = 51;
-            this.txtTemp.Visible = false;
             // 
             // label1
             // 
@@ -244,7 +235,6 @@
             this.Controls.Add(this.btnEditProp);
             this.Controls.Add(this.btnAddProp);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.txtTemp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.btnLoadProps);
@@ -270,8 +260,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoadData;
         private System.Windows.Forms.PictureBox btnLoadProps;

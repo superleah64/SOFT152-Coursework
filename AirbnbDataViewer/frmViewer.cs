@@ -43,34 +43,36 @@ namespace AirbnbData
                         int NumProp = Convert.ToInt32(TempNumProp);
                         Property[] Prop_Array = new Property[NumProp];
                         // deal with this neighbourhoods properties 
-
-                        for (int b = 0; b < NumProp; b++)
+                        if (NumProp != 0)
                         {
-                            string TempPropID = AirbnbData.ReadLine();
-                            string TempPropName = AirbnbData.ReadLine();
-                            string TempHostID = AirbnbData.ReadLine();
-                            string TempHostName = AirbnbData.ReadLine();
-                            string TempNumPropH = AirbnbData.ReadLine();
-                            string TempLati = AirbnbData.ReadLine();
-                            string TempLongi = AirbnbData.ReadLine();
-                            string TempRoomType = AirbnbData.ReadLine();
-                            string TempPrice = AirbnbData.ReadLine();
-                            string TempMinNights = AirbnbData.ReadLine();
-                            string TempDays = AirbnbData.ReadLine();
+                            for (int b = 0; b < NumProp; b++)
+                            {
+                                string TempPropID = AirbnbData.ReadLine();
+                                string TempPropName = AirbnbData.ReadLine();
+                                string TempHostID = AirbnbData.ReadLine();
+                                string TempHostName = AirbnbData.ReadLine();
+                                string TempNumPropH = AirbnbData.ReadLine();
+                                string TempLati = AirbnbData.ReadLine();
+                                string TempLongi = AirbnbData.ReadLine();
+                                string TempRoomType = AirbnbData.ReadLine();
+                                string TempPrice = AirbnbData.ReadLine();
+                                string TempMinNights = AirbnbData.ReadLine();
+                                string TempDays = AirbnbData.ReadLine();
 
-                            Property TempProp = new Property(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
-                                                                    TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
+                                Property TempProp = new Property(TempPropID, TempPropName, TempHostID, TempHostName, Convert.ToInt32(TempNumPropH), TempLati, TempLongi,
+                                                                        TempRoomType, Convert.ToInt32(TempPrice), Convert.ToInt32(TempMinNights), Convert.ToInt32(TempDays));
 
-                            int newPropSize = Arrays.PropData.Length;
-                            Array.Resize(ref Arrays.PropData, newPropSize + 1);
-                            Arrays.PropData[newPropSize] = TempProp;
+                                int newPropSize = Arrays.PropData.Length;
+                                Array.Resize(ref Arrays.PropData, newPropSize + 1);
+                                Arrays.PropData[newPropSize] = TempProp;
+                            }
+
+                            Neighbourhood TempNbh = new Neighbourhood(TempNbhName, Convert.ToInt32(TempNumProp), Arrays.PropData);
+                            Array.Resize(ref Arrays.PropData, 0);
+                            int newNbhSize = Arrays.NbhData.Length;
+                            Array.Resize(ref Arrays.NbhData, newNbhSize + 1);
+                            Arrays.NbhData[newNbhSize] = TempNbh;
                         }
-
-                        Neighbourhood TempNbh = new Neighbourhood(TempNbhName, Convert.ToInt32(TempNumProp), Arrays.PropData);
-                        Array.Resize(ref Arrays.PropData, 0);
-                        int newNbhSize = Arrays.NbhData.Length;
-                        Array.Resize(ref Arrays.NbhData, newNbhSize + 1);
-                        Arrays.NbhData[newNbhSize] = TempNbh;
                     }
 
                     District TempDist = new District(TempDistName, Convert.ToInt32(TempNumNbh), Arrays.NbhData);
@@ -128,13 +130,15 @@ namespace AirbnbData
                 int nbhno = dist.getDistNumNbh();
                 // put all the selected  district's nbhs into an array 
                 Arrays.NbhData = dist.getDistAllNbh();
-
+                if (nbhno != 0)
+                    { 
                 foreach (Neighbourhood nbh in Arrays.NbhData)
 
                     lstNeighbourhoods.Items.Add(nbh.getNbhName());
                 //add/edit nbh buttons become available
                 btnAddNbh.Show();
                 btnEditNbh.Show();
+            }
             }
 
             else
@@ -166,14 +170,17 @@ namespace AirbnbData
                 Neighbourhood nbh = Arrays.NbhData[whichnbh];
 
                 Arrays.PropData = nbh.getNbhAllProp();
+                if (nbh.getNbhNumProp() != 0)
+                {
+                    nbh.getNbhAllProp();
+                    foreach (Property prop in Arrays.PropData)
 
-                foreach (Property prop in Arrays.PropData)
+                        lstProperties.Items.Add(prop.getPropName());
 
-                    lstProperties.Items.Add(prop.getPropName());
-
-                // property maintenance button becomes available
-                btnAddProp.Show();
-                btnEditProp.Show();
+                    // property maintenance buttons become available
+                    btnAddProp.Show();
+                    btnEditProp.Show();
+                }
             }
 
             else
@@ -186,6 +193,26 @@ namespace AirbnbData
         {
             if (lstDistricts.SelectedIndex == -1)
             {
+                // display a text box for entering the new district's name
+                // create a new district object using an alternative constructor 
+                District TempDist = new District("Bristol");
+                // add the new object to the all districts array
+                int newDistSize = Arrays.DistData.Length;
+                Array.Resize(ref Arrays.DistData, newDistSize + 1);
+                Arrays.DistData[newDistSize] = TempDist;
+
+                // redisplay the district lst box 
+                // redisplay the district data in the list box
+                lstDistricts.Items.Clear();
+
+                foreach (District newdist in Arrays.DistData)
+                {
+                    //get the district name
+
+                    // put the name in the listbox
+                    lstDistricts.Items.Add(newdist.getDistName());
+
+                }
 
             }
             else
@@ -193,11 +220,6 @@ namespace AirbnbData
                 MessageBox.Show("You cannot add a district while another is selected.");
             }
 
-            // if Ok then open dialog box to get new  district name
-            // create a new district object with a zero no. of nhbs
-
-            // add the object to the airbnb_array
-            // lstDistricts.Items.Add();
         }
 
         private void btnEditDist_Click(object sender, EventArgs e)
@@ -210,14 +232,13 @@ namespace AirbnbData
 
                 // display an input form showdialog mode to accept the new name 
                 frmEditD.ShowDialog();
-                txtTemp.Text = frmEditDist.SetTextValueDist;
 
                 // update the data in the array object
                 int distno = lstDistricts.SelectedIndex;
 
 
                 District dist = Arrays.DistData[distno];
-                dist.setDistName(txtTemp.Text);
+                dist.setDistName(frmEditDist.SetTextValueDist);
 
                 // redisplay the district data in the list box
                 lstDistricts.Items.Clear();
@@ -242,13 +263,24 @@ namespace AirbnbData
             // make sure district is selected and nbh is not
             if (lstDistricts.SelectedIndex != -1 && lstNeighbourhoods.SelectedIndex == -1)
             {
+                // call the district's add new nbh setter
+                Arrays.DistData[lstDistricts.SelectedIndex].setNewNbh("laira");
 
-            }
+                lstNeighbourhoods.Items.Clear();
 
-            // if Ok then open dialog box to get new nbh name
-            // create a new nbh object with this name and zero properties
-            // add new nbh to district object using its setter
-            // unselect district 
+                foreach (Neighbourhood newnbh in Arrays.NbhData)
+                {
+                    //get the neighbourhood name
+
+                    // put the name in the listbox
+                    lstNeighbourhoods.Items.Add(newnbh.getNbhName());
+
+                }
+
+
+
+
+                            }
             else
             {
                 MessageBox.Show("You cannot add a neighbourhood while another is selected.");
@@ -265,14 +297,13 @@ namespace AirbnbData
 
                 // if so display an input form showdialog mode to accept the new name 
                 frmEditN.ShowDialog();
-                txtTemp.Text = frmEditNbh.SetTextValueNbh;
 
                 // update the data in the array object
                 int nbhno = lstNeighbourhoods.SelectedIndex;
 
 
                 Neighbourhood nbh = Arrays.NbhData[nbhno];
-                nbh.setNbhName(txtTemp.Text);
+                nbh.setNbhName(frmEditNbh.SetTextValueNbh);
 
                 // redisplay the neighbourhood dta in the list box
                 lstNeighbourhoods.Items.Clear();
@@ -307,14 +338,34 @@ namespace AirbnbData
                 frmProp.Show();
             }
         }
+       public  static  string SetTextValuePropName = "xxxxxxx";
 
         private void BtnEditProp_Click(object sender, EventArgs e)
         {
+            
             // make sure a dist, nbh and prop are selected
             if (lstDistricts.SelectedIndex != -1 && lstNeighbourhoods.SelectedIndex != -1 && lstProperties.SelectedIndex != -1)
             {
+                // get district number
+                int distno = lstDistricts.SelectedIndex;
+                // get neighbourhood number 
+                int whichnbh = lstNeighbourhoods.SelectedIndex;
+                // get property number
+                int propno = lstProperties.SelectedIndex;
                 // open the property maintenance form
+                // get this property object out of the arrays
+                District dist = Arrays.DistData[distno];
+                Neighbourhood nbh = Arrays.NbhData[whichnbh];
+                Arrays.PropData = nbh.getNbhAllProp();
+                Property prop = Arrays.PropData[propno];
+
+                // get data ready to carry to new form 
+               
+                SetTextValuePropName = prop.getPropName();
+
+
                 frmEditProp frmProp = new frmEditProp();
+                
                 frmProp.Show();
             }
         }
@@ -336,27 +387,31 @@ namespace AirbnbData
                 {
                     AirbnbData.WriteLine(dist.getDistName());
                     AirbnbData.WriteLine(dist.getDistNumNbh());
-
-                    foreach (Neighbourhood nbh in dist.getDistAllNbh())
+                    if (dist.getDistNumNbh() != 0)
                     {
-                        AirbnbData.WriteLine(nbh.getNbhName());
-                        AirbnbData.WriteLine(nbh.getNbhNumProp());
-
-                        foreach (Property prop in nbh.getNbhAllProp())
+                        foreach (Neighbourhood nbh in dist.getDistAllNbh())
                         {
-                            AirbnbData.WriteLine(prop.getPropID());
-                            AirbnbData.WriteLine(prop.getPropName());
-                            AirbnbData.WriteLine(prop.getHostID());
-                            AirbnbData.WriteLine(prop.getHostName());
-                            AirbnbData.WriteLine(prop.getNumPropH());
-                            AirbnbData.WriteLine(prop.getLati());
-                            AirbnbData.WriteLine(prop.getLongi());
-                            AirbnbData.WriteLine(prop.getRoomType());
-                            AirbnbData.WriteLine(prop.getPrice());
-                            AirbnbData.WriteLine(prop.getMinNights());
-                            AirbnbData.WriteLine(prop.getDays());
-                        } // next property
-                    }// next nbh
+                            AirbnbData.WriteLine(nbh.getNbhName());
+                            AirbnbData.WriteLine(nbh.getNbhNumProp());
+                            if (nbh.getNbhNumProp() != 0 )
+                            {
+                                foreach (Property prop in nbh.getNbhAllProp())
+                                {
+                                    AirbnbData.WriteLine(prop.getPropID());
+                                    AirbnbData.WriteLine(prop.getPropName());
+                                    AirbnbData.WriteLine(prop.getHostID());
+                                    AirbnbData.WriteLine(prop.getHostName());
+                                    AirbnbData.WriteLine(prop.getNumPropH());
+                                    AirbnbData.WriteLine(prop.getLati());
+                                    AirbnbData.WriteLine(prop.getLongi());
+                                    AirbnbData.WriteLine(prop.getRoomType());
+                                    AirbnbData.WriteLine(prop.getPrice());
+                                    AirbnbData.WriteLine(prop.getMinNights());
+                                    AirbnbData.WriteLine(prop.getDays());
+                                } // next property
+                            }
+                        }// next nbh
+                    }
                 }//next dist
             // close the form
             this.Close();

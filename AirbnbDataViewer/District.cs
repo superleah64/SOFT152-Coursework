@@ -20,7 +20,13 @@ namespace AirbnbData
             distNumNbh = inDistNumNbh;
             distAllNbh = inDistNbh; //pass all neighbourhoods in
         }
-
+        // alternative constructor for new districts
+        public District(string inDistName)
+        {
+            distName = inDistName;
+            distNumNbh = 0;
+            distAllNbh = null;
+        }
 
         //setters
         public void setDistName(string inDistName)
@@ -30,6 +36,14 @@ namespace AirbnbData
         public void setDistNumNbh(int inDistNumNbh)
         {
             distNumNbh = inDistNumNbh;
+        }
+        public void setNewNbh(string nbhname)
+        {
+            Neighbourhood TempNBH = new Neighbourhood("laira");
+            int newnbhSize = Arrays.NbhData.Length;
+            Array.Resize(ref Arrays.NbhData, newnbhSize + 1);
+            Arrays.NbhData[newnbhSize] = TempNBH;
+            distNumNbh = distNumNbh + 1;
         }
 
         //getters
