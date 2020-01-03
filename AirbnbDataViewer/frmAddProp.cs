@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AirbnbDataViewer
 {
-    public partial class frmPropMaintenance : Form
+    public partial class frmAddProp : Form
     {
-        public frmPropMaintenance()
+        public frmAddProp()
         {
             InitializeComponent();
         }

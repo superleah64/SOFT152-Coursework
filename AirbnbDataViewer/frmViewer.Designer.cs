@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewer));
             this.txtTemp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lstPropData = new System.Windows.Forms.ListBox();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.btnLoadProps = new System.Windows.Forms.PictureBox();
             this.btnLoadNbhs = new System.Windows.Forms.PictureBox();
@@ -45,8 +44,9 @@
             this.lstNeighbourhoods = new System.Windows.Forms.ListBox();
             this.lstDistricts = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnPropMaint = new System.Windows.Forms.Button();
+            this.btnAddProp = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnEditProp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).BeginInit();
@@ -55,9 +55,9 @@
             // 
             // txtTemp
             // 
-            this.txtTemp.Location = new System.Drawing.Point(26, 466);
+            this.txtTemp.Location = new System.Drawing.Point(1124, 37);
             this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(147, 20);
+            this.txtTemp.Size = new System.Drawing.Size(39, 20);
             this.txtTemp.TabIndex = 51;
             this.txtTemp.Visible = false;
             // 
@@ -67,19 +67,8 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(853, 388);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 16);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 50;
-            this.label1.Text = "Characteristics";
-            // 
-            // lstPropData
-            // 
-            this.lstPropData.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstPropData.FormattingEnabled = true;
-            this.lstPropData.ItemHeight = 15;
-            this.lstPropData.Location = new System.Drawing.Point(747, 407);
-            this.lstPropData.Name = "lstPropData";
-            this.lstPropData.Size = new System.Drawing.Size(282, 199);
-            this.lstPropData.TabIndex = 49;
             // 
             // btnLoadData
             // 
@@ -139,6 +128,7 @@
             this.btnEditNbh.TabIndex = 43;
             this.btnEditNbh.Text = "Edit Neighbourhood";
             this.btnEditNbh.UseVisualStyleBackColor = true;
+            this.btnEditNbh.Visible = false;
             this.btnEditNbh.Click += new System.EventHandler(this.btnEditNbh_Click);
             // 
             // btnEditDist
@@ -150,6 +140,7 @@
             this.btnEditDist.TabIndex = 42;
             this.btnEditDist.Text = "Edit District";
             this.btnEditDist.UseVisualStyleBackColor = true;
+            this.btnEditDist.Visible = false;
             this.btnEditDist.Click += new System.EventHandler(this.btnEditDist_Click);
             // 
             // btnAddNbh
@@ -161,6 +152,7 @@
             this.btnAddNbh.TabIndex = 41;
             this.btnAddNbh.Text = "Add Neighbourhood";
             this.btnAddNbh.UseVisualStyleBackColor = true;
+            this.btnAddNbh.Visible = false;
             this.btnAddNbh.Click += new System.EventHandler(this.btnAddNbh_Click);
             // 
             // btnAddDist
@@ -172,6 +164,7 @@
             this.btnAddDist.TabIndex = 40;
             this.btnAddDist.Text = "Add District";
             this.btnAddDist.UseVisualStyleBackColor = true;
+            this.btnAddDist.Visible = false;
             this.btnAddDist.Click += new System.EventHandler(this.btnAddDist_Click);
             // 
             // lstProperties
@@ -208,21 +201,22 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnPropMaint
+            // btnAddProp
             // 
-            this.btnPropMaint.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPropMaint.Location = new System.Drawing.Point(817, 623);
-            this.btnPropMaint.Name = "btnPropMaint";
-            this.btnPropMaint.Size = new System.Drawing.Size(139, 56);
-            this.btnPropMaint.TabIndex = 53;
-            this.btnPropMaint.Text = "Property Maintenance";
-            this.btnPropMaint.UseVisualStyleBackColor = true;
-            this.btnPropMaint.Click += new System.EventHandler(this.btnPropMaint_Click);
+            this.btnAddProp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddProp.Location = new System.Drawing.Point(818, 399);
+            this.btnAddProp.Name = "btnAddProp";
+            this.btnAddProp.Size = new System.Drawing.Size(139, 25);
+            this.btnAddProp.TabIndex = 53;
+            this.btnAddProp.Text = "Add Property";
+            this.btnAddProp.UseVisualStyleBackColor = true;
+            this.btnAddProp.Visible = false;
+            this.btnAddProp.Click += new System.EventHandler(this.btnAddProp_Click);
             // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1065, 626);
+            this.btnExit.Location = new System.Drawing.Point(1050, 471);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(150, 47);
             this.btnExit.TabIndex = 52;
@@ -230,16 +224,28 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnEditProp
+            // 
+            this.btnEditProp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProp.Location = new System.Drawing.Point(818, 430);
+            this.btnEditProp.Name = "btnEditProp";
+            this.btnEditProp.Size = new System.Drawing.Size(139, 25);
+            this.btnEditProp.TabIndex = 54;
+            this.btnEditProp.Text = "Edit Property";
+            this.btnEditProp.UseVisualStyleBackColor = true;
+            this.btnEditProp.Visible = false;
+            this.btnEditProp.Click += new System.EventHandler(this.BtnEditProp_Click);
+            // 
             // frmViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 717);
-            this.Controls.Add(this.btnPropMaint);
+            this.ClientSize = new System.Drawing.Size(1256, 550);
+            this.Controls.Add(this.btnEditProp);
+            this.Controls.Add(this.btnAddProp);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtTemp);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstPropData);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.btnLoadProps);
             this.Controls.Add(this.btnLoadNbhs);
@@ -267,7 +273,6 @@
 
         private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox lstPropData;
         private System.Windows.Forms.Button btnLoadData;
         private System.Windows.Forms.PictureBox btnLoadProps;
         private System.Windows.Forms.PictureBox btnLoadNbhs;
@@ -281,8 +286,9 @@
         private System.Windows.Forms.ListBox lstNeighbourhoods;
         private System.Windows.Forms.ListBox lstDistricts;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnPropMaint;
+        private System.Windows.Forms.Button btnAddProp;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnEditProp;
     }
 }
 

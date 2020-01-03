@@ -72,11 +72,17 @@
     <Compile Include="frmEditNbh.Designer.cs">
       <DependentUpon>frmEditNbh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPropMaintenance.cs">
+    <Compile Include="frmAddProp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPropMaintenance.Designer.cs">
-      <DependentUpon>frmPropMaintenance.cs</DependentUpon>
+    <Compile Include="frmAddProp.Designer.cs">
+      <DependentUpon>frmAddProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditProp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProp.Designer.cs">
+      <DependentUpon>frmEditProp.cs</DependentUpon>
     </Compile>
     <Compile Include="frmViewer.cs">
       <SubType>Form</SubType>
@@ -99,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditNbh.resx">
       <DependentUpon>frmEditNbh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProp.resx">
+      <DependentUpon>frmAddProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProp.resx">
+      <DependentUpon>frmEditProp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewer.resx">
       <DependentUpon>frmViewer.cs</DependentUpon>
