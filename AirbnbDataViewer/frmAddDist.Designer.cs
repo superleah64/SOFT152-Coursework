@@ -41,6 +41,7 @@
             this.btnDoneDist.TabIndex = 8;
             this.btnDoneDist.Text = "Done";
             this.btnDoneDist.UseVisualStyleBackColor = true;
+            this.btnDoneDist.Click += new System.EventHandler(this.btnDoneDist_Click);
             // 
             // txtAddDist
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirbnbData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace AirbnbDataViewer
         public frmAddDist()
         {
             InitializeComponent();
+        }
+
+        private void btnDoneDist_Click(object sender, EventArgs e)
+        {
+            District TempDist = new District(txtAddDist.Text);
         }
     }
 }

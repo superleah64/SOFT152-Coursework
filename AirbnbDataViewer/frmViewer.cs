@@ -15,6 +15,11 @@ namespace AirbnbData
         private bool btnLoadDataWasClicked = false;
         private void btnLoadData_Click(object sender, EventArgs e)
         {
+            // clear data left in listboxes if selecting a second file later
+            lstDistricts.Items.Clear();
+            lstNeighbourhoods.Items.Clear();
+            lstProperties.Items.Clear();
+
             btnLoadDataWasClicked = true;
             // select file 
             DialogResult result = openFileDialog1.ShowDialog();
@@ -191,11 +196,11 @@ namespace AirbnbData
 
         private void btnAddDist_Click(object sender, EventArgs e)
         {
-            if (lstDistricts.SelectedIndex == -1)
-            {
-                // display a text box for entering the new district's name
-                // create a new district object using an alternative constructor 
-                District TempDist = new District("Bristol");
+            // display a text box for entering the new district's name
+            // create a new district object using an alternative constructor
+               District TempDist = new District();
+               frmAddDist frmAddD = new frmAddDist();
+                frmAddD.ShowDialog();
                 // add the new object to the all districts array
                 int newDistSize = Arrays.DistData.Length;
                 Array.Resize(ref Arrays.DistData, newDistSize + 1);
@@ -213,13 +218,6 @@ namespace AirbnbData
                     lstDistricts.Items.Add(newdist.getDistName());
 
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("You cannot add a district while another is selected.");
-            }
-
         }
 
         private void btnEditDist_Click(object sender, EventArgs e)
@@ -260,9 +258,6 @@ namespace AirbnbData
 
         private void btnAddNbh_Click(object sender, EventArgs e)
         {
-            // make sure district is selected and nbh is not
-            if (lstDistricts.SelectedIndex != -1 && lstNeighbourhoods.SelectedIndex == -1)
-            {
                 // call the district's add new nbh setter
                 Arrays.DistData[lstDistricts.SelectedIndex].setNewNbh("laira");
 
@@ -276,15 +271,6 @@ namespace AirbnbData
                     lstNeighbourhoods.Items.Add(newnbh.getNbhName());
 
                 }
-
-
-
-
-                            }
-            else
-            {
-                MessageBox.Show("You cannot add a neighbourhood while another is selected.");
-            }
         }
 
         private void btnEditNbh_Click(object sender, EventArgs e)
@@ -343,13 +329,13 @@ namespace AirbnbData
         public static string SetTextValuePropName;
         public static string SetTextValueHostID;
         public static string SetTextValueHostName;
-        public static string SetTextValueNumProp;
+        public static int SetTextValueNumProp;
         public static string SetTextValueLati;
         public static string SetTextValueLongi;
         public static string SetTextValueRoomType;
-        public static string SetTextValuePrice;
-        public static string SetTextValueMinNights;
-        public static string SetTextValueDays;
+        public static int SetTextValuePrice;
+        public static int SetTextValueMinNights;
+        public static int SetTextValueDays;
 
         private void BtnEditProp_Click(object sender, EventArgs e)
         {
@@ -374,12 +360,14 @@ namespace AirbnbData
                 SetTextValuePropID = prop.getPropID();
                 SetTextValuePropName = prop.getPropName();
                 SetTextValueHostID = prop.getHostID();
-                SetTextValueHostName = prop.getPropName();
+                SetTextValueHostName = prop.getHostName();
                 SetTextValueNumProp = prop.getNumPropH();
-
-
-
-
+                SetTextValueLati = prop.getLati();
+                SetTextValueLongi = prop.getLongi();
+                SetTextValueRoomType = prop.getRoomType();
+                SetTextValuePrice = prop.getPrice();
+                SetTextValueMinNights = prop.getMinNights();
+                SetTextValueDays = prop.getDays();
 
                 frmEditProp frmProp = new frmEditProp();
                 

@@ -28,6 +28,10 @@ namespace AirbnbData
             distAllNbh = null;
         }
 
+        public District()
+        {
+        }
+
         //setters
         public void setDistName(string inDistName)
         {
