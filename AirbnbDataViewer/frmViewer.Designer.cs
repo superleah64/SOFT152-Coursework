@@ -195,6 +195,7 @@
             this.lstDistricts.Size = new System.Drawing.Size(282, 199);
             this.lstDistricts.TabIndex = 37;
             this.lstDistricts.Visible = false;
+            this.lstDistricts.SelectedIndexChanged += new System.EventHandler(this.lstDistricts_SelectedIndexChanged);
             // 
             // openFileDialog1
             // 
@@ -203,9 +204,9 @@
             // btnAddProp
             // 
             this.btnAddProp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProp.Location = new System.Drawing.Point(742, 391);
+            this.btnAddProp.Location = new System.Drawing.Point(734, 391);
             this.btnAddProp.Name = "btnAddProp";
-            this.btnAddProp.Size = new System.Drawing.Size(139, 25);
+            this.btnAddProp.Size = new System.Drawing.Size(160, 25);
             this.btnAddProp.TabIndex = 53;
             this.btnAddProp.Text = "Add Property";
             this.btnAddProp.UseVisualStyleBackColor = true;
@@ -227,11 +228,11 @@
             // btnEditProp
             // 
             this.btnEditProp.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProp.Location = new System.Drawing.Point(742, 422);
+            this.btnEditProp.Location = new System.Drawing.Point(734, 422);
             this.btnEditProp.Name = "btnEditProp";
-            this.btnEditProp.Size = new System.Drawing.Size(139, 25);
+            this.btnEditProp.Size = new System.Drawing.Size(160, 25);
             this.btnEditProp.TabIndex = 54;
-            this.btnEditProp.Text = "Edit Property";
+            this.btnEditProp.Text = "View and Edit Property";
             this.btnEditProp.UseVisualStyleBackColor = true;
             this.btnEditProp.Visible = false;
             this.btnEditProp.Click += new System.EventHandler(this.BtnEditProp_Click);
