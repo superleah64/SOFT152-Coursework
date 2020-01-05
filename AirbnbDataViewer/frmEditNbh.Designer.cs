@@ -39,6 +39,7 @@
             this.txtEditNbh.Name = "txtEditNbh";
             this.txtEditNbh.Size = new System.Drawing.Size(323, 20);
             this.txtEditNbh.TabIndex = 7;
+            this.txtEditNbh.TextChanged += new System.EventHandler(this.txtEditNbh_TextChanged);
             // 
             // label1
             // 

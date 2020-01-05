@@ -17,10 +17,6 @@ namespace AirbnbDataViewer
         public frmEditProp()
         {
             InitializeComponent();
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
             // show all property values 
             frmViewer frmView = new frmViewer();
             txtPropID.Text = frmViewer.SetTextValuePropID;
@@ -34,6 +30,11 @@ namespace AirbnbDataViewer
             txtPrice.Text = Convert.ToString(frmViewer.SetTextValuePrice);
             txtMinNights.Text = Convert.ToString(frmViewer.SetTextValueMinNights);
             txtDays.Text = Convert.ToString(frmViewer.SetTextValueDays);
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+
         }
 
         public static string SetTextValueProp = "";
@@ -106,6 +107,11 @@ namespace AirbnbDataViewer
                 SetTextValueProp = txtDays.Text;
             }
             else MessageBox.Show("Please complete all fields.");
+            this.Close();
+        }
+
+        private void btnDone_Click_1(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

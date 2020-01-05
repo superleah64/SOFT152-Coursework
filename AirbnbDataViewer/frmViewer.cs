@@ -21,9 +21,9 @@ namespace AirbnbData
 
             // show all buttons and listboxes
             imgTitle.Show();
-            btnLoadDists.Show();
-            btnLoadNbhs.Show();
-            btnLoadProps.Show();
+            imgDistricts.Show();
+            imgNeighbourhoods.Show();
+            imgProperties.Show();
             lstDistricts.Show();
             lstNeighbourhoods.Show();
             lstProperties.Show();
@@ -110,11 +110,7 @@ namespace AirbnbData
 
                 AirbnbData.Close();
             }
-        }
 
-        
-        private void btnLoadDists_Click(object sender, EventArgs e)
-        {
             // only show data and buttons if data was loaded in first
             if (btnLoadDataWasClicked)
             {
@@ -131,14 +127,9 @@ namespace AirbnbData
                 btnAddDist.Show();
                 btnEditDist.Show();
             }
-
-            else
-            {
-                MessageBox.Show("Please select a data file first.");
-            }
         }
 
-        private void btnLoadNbhs_Click(object sender, EventArgs e)
+        private void lstDistricts_SelectedIndexChanged(object sender, EventArgs e)
         {
             // if a district is selected display all nbh in that district using district objects getter for the number of nbh and nbh getters for data
             //check a district is selected
@@ -154,13 +145,13 @@ namespace AirbnbData
                 // put all the selected  district's nbhs into an array 
                 Arrays.NbhData = dist.getDistAllNbh();
                 if (nbhno != 0)
-                { 
-                foreach (Neighbourhood nbh in Arrays.NbhData)
-                    lstNeighbourhoods.Items.Add(nbh.getNbhName());
+                {
+                    foreach (Neighbourhood nbh in Arrays.NbhData)
+                        lstNeighbourhoods.Items.Add(nbh.getNbhName());
 
-                //add/edit nbh buttons become available
-                btnAddNbh.Show();
-                btnEditNbh.Show();
+                    //add/edit nbh buttons become available
+                    btnAddNbh.Show();
+                    btnEditNbh.Show();
                 }
             }
 
@@ -168,10 +159,9 @@ namespace AirbnbData
             {
                 MessageBox.Show("You must select a district.");
             }
-
         }
 
-        private void btnLoadProps_Click(object sender, EventArgs e)
+        private void lstNeighbourhoods_SelectedIndexChanged(object sender, EventArgs e)
         {
             // show nbh properties using nbh objects getter for number of properties
             // and property getters for property details 
@@ -210,6 +200,7 @@ namespace AirbnbData
             {
                 MessageBox.Show("You must select a district and neighbourhood.");
             }
+
         }
 
         private void btnAddDist_Click(object sender, EventArgs e)
@@ -219,12 +210,8 @@ namespace AirbnbData
                District TempDist = new District();
                frmAddDist frmAddD = new frmAddDist();
                 frmAddD.ShowDialog();
-
-            District dist = Arrays.DistData[distno];
-            dist.setDistName(frmEditDist.SetTextValueDist);
-
-            // add the new object to the all districts array
-            int newDistSize = Arrays.DistData.Length;
+                // add the new object to the all districts array
+                int newDistSize = Arrays.DistData.Length;
                 Array.Resize(ref Arrays.DistData, newDistSize + 1);
                 Arrays.DistData[newDistSize] = TempDist;
 
@@ -238,6 +225,7 @@ namespace AirbnbData
 
                     // put the name in the listbox
                     lstDistricts.Items.Add(newdist.getDistName());
+
                 }
         }
 
@@ -255,7 +243,7 @@ namespace AirbnbData
                 // update the data in the array object
                 int distno = lstDistricts.SelectedIndex;
 
-                // take the name entered into the text box from the edit form
+
                 District dist = Arrays.DistData[distno];
                 dist.setDistName(frmEditDist.SetTextValueDist);
 
@@ -268,6 +256,7 @@ namespace AirbnbData
 
                     // put the name in the listbox
                     lstDistricts.Items.Add(newdist.getDistName());
+
                 }
             }
             else
@@ -330,11 +319,6 @@ namespace AirbnbData
             }
         }
 
-        void lstProperties_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            // when double clicking a value in the property listbox its characteristics are displayed in a popup form
-        }
-
         private void btnAddProp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This feature is not yet available.");
@@ -358,7 +342,6 @@ namespace AirbnbData
         public static int SetTextValuePrice;
         public static int SetTextValueMinNights;
         public static int SetTextValueDays;
-        private int distno;
 
         private void BtnEditProp_Click(object sender, EventArgs e)
         {
@@ -444,11 +427,6 @@ namespace AirbnbData
                 }//next dist
             // close the form
             this.Close();
-        }
-
-        private void lstDistricts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

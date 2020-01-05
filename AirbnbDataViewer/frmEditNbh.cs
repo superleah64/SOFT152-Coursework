@@ -28,5 +28,10 @@ namespace AirbnbData
             else MessageBox.Show("Please enter a name.");
             this.Close();
         }
+
+        private void txtEditNbh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

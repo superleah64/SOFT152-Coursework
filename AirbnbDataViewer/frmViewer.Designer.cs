@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewer));
             this.label1 = new System.Windows.Forms.Label();
             this.btnLoadData = new System.Windows.Forms.Button();
-            this.btnLoadProps = new System.Windows.Forms.PictureBox();
-            this.btnLoadNbhs = new System.Windows.Forms.PictureBox();
-            this.btnLoadDists = new System.Windows.Forms.PictureBox();
+            this.imgProperties = new System.Windows.Forms.PictureBox();
+            this.imgNeighbourhoods = new System.Windows.Forms.PictureBox();
+            this.imgDistricts = new System.Windows.Forms.PictureBox();
             this.imgTitle = new System.Windows.Forms.PictureBox();
             this.btnEditNbh = new System.Windows.Forms.Button();
             this.btnEditDist = new System.Windows.Forms.Button();
@@ -47,9 +47,9 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnEditProp = new System.Windows.Forms.Button();
             this.lblClick = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNeighbourhoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDistricts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,38 +73,35 @@
             this.btnLoadData.UseVisualStyleBackColor = true;
             this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
             // 
-            // btnLoadProps
+            // imgProperties
             // 
-            this.btnLoadProps.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadProps.Image")));
-            this.btnLoadProps.Location = new System.Drawing.Point(742, 116);
-            this.btnLoadProps.Name = "btnLoadProps";
-            this.btnLoadProps.Size = new System.Drawing.Size(152, 52);
-            this.btnLoadProps.TabIndex = 47;
-            this.btnLoadProps.TabStop = false;
-            this.btnLoadProps.Visible = false;
-            this.btnLoadProps.Click += new System.EventHandler(this.btnLoadProps_Click);
+            this.imgProperties.Image = ((System.Drawing.Image)(resources.GetObject("imgProperties.Image")));
+            this.imgProperties.Location = new System.Drawing.Point(742, 116);
+            this.imgProperties.Name = "imgProperties";
+            this.imgProperties.Size = new System.Drawing.Size(152, 52);
+            this.imgProperties.TabIndex = 47;
+            this.imgProperties.TabStop = false;
+            this.imgProperties.Visible = false;
             // 
-            // btnLoadNbhs
+            // imgNeighbourhoods
             // 
-            this.btnLoadNbhs.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadNbhs.Image")));
-            this.btnLoadNbhs.Location = new System.Drawing.Point(446, 116);
-            this.btnLoadNbhs.Name = "btnLoadNbhs";
-            this.btnLoadNbhs.Size = new System.Drawing.Size(151, 52);
-            this.btnLoadNbhs.TabIndex = 46;
-            this.btnLoadNbhs.TabStop = false;
-            this.btnLoadNbhs.Visible = false;
-            this.btnLoadNbhs.Click += new System.EventHandler(this.btnLoadNbhs_Click);
+            this.imgNeighbourhoods.Image = ((System.Drawing.Image)(resources.GetObject("imgNeighbourhoods.Image")));
+            this.imgNeighbourhoods.Location = new System.Drawing.Point(446, 116);
+            this.imgNeighbourhoods.Name = "imgNeighbourhoods";
+            this.imgNeighbourhoods.Size = new System.Drawing.Size(151, 52);
+            this.imgNeighbourhoods.TabIndex = 46;
+            this.imgNeighbourhoods.TabStop = false;
+            this.imgNeighbourhoods.Visible = false;
             // 
-            // btnLoadDists
+            // imgDistricts
             // 
-            this.btnLoadDists.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadDists.Image")));
-            this.btnLoadDists.Location = new System.Drawing.Point(166, 116);
-            this.btnLoadDists.Name = "btnLoadDists";
-            this.btnLoadDists.Size = new System.Drawing.Size(152, 52);
-            this.btnLoadDists.TabIndex = 45;
-            this.btnLoadDists.TabStop = false;
-            this.btnLoadDists.Visible = false;
-            this.btnLoadDists.Click += new System.EventHandler(this.btnLoadDists_Click);
+            this.imgDistricts.Image = ((System.Drawing.Image)(resources.GetObject("imgDistricts.Image")));
+            this.imgDistricts.Location = new System.Drawing.Point(166, 116);
+            this.imgDistricts.Name = "imgDistricts";
+            this.imgDistricts.Size = new System.Drawing.Size(152, 52);
+            this.imgDistricts.TabIndex = 45;
+            this.imgDistricts.TabStop = false;
+            this.imgDistricts.Visible = false;
             // 
             // imgTitle
             // 
@@ -184,6 +181,7 @@
             this.lstNeighbourhoods.Size = new System.Drawing.Size(282, 199);
             this.lstNeighbourhoods.TabIndex = 38;
             this.lstNeighbourhoods.Visible = false;
+            this.lstNeighbourhoods.SelectedIndexChanged += new System.EventHandler(this.lstNeighbourhoods_SelectedIndexChanged);
             // 
             // lstDistricts
             // 
@@ -257,9 +255,9 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLoadData);
-            this.Controls.Add(this.btnLoadProps);
-            this.Controls.Add(this.btnLoadNbhs);
-            this.Controls.Add(this.btnLoadDists);
+            this.Controls.Add(this.imgProperties);
+            this.Controls.Add(this.imgNeighbourhoods);
+            this.Controls.Add(this.imgDistricts);
             this.Controls.Add(this.imgTitle);
             this.Controls.Add(this.btnEditNbh);
             this.Controls.Add(this.btnEditDist);
@@ -270,9 +268,9 @@
             this.Controls.Add(this.lstDistricts);
             this.Name = "frmViewer";
             this.Text = "Airbnb Data Viewer";
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadProps)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadNbhs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLoadDists)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNeighbourhoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgDistricts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,9 +280,9 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoadData;
-        private System.Windows.Forms.PictureBox btnLoadProps;
-        private System.Windows.Forms.PictureBox btnLoadNbhs;
-        private System.Windows.Forms.PictureBox btnLoadDists;
+        private System.Windows.Forms.PictureBox imgProperties;
+        private System.Windows.Forms.PictureBox imgNeighbourhoods;
+        private System.Windows.Forms.PictureBox imgDistricts;
         private System.Windows.Forms.PictureBox imgTitle;
         private System.Windows.Forms.Button btnEditNbh;
         private System.Windows.Forms.Button btnEditDist;

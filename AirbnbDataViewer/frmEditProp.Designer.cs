@@ -55,7 +55,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtRoomType = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +67,7 @@
             this.btnDone.TabIndex = 39;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click_1);
             // 
             // label10
             // 
@@ -289,7 +289,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnLoad);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
@@ -318,16 +317,6 @@
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit your property details below.";
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(10, 19);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(135, 25);
-            this.btnLoad.TabIndex = 40;
-            this.btnLoad.Text = "View Property Data";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // frmEditProp
             // 
@@ -376,6 +365,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtRoomType;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnLoad;
     }
 }
