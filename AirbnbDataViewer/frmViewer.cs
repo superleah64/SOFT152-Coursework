@@ -15,6 +15,27 @@ namespace AirbnbData
         private bool btnLoadDataWasClicked = false;
         private void btnLoadData_Click(object sender, EventArgs e)
         {
+            
+            // hide text and button
+            btnLoadData.Hide();
+            lblClick.Hide();
+
+            // show all buttons and listboxes
+            imgTitle.Show();
+            btnLoadDists.Show();
+            btnLoadNbhs.Show();
+            btnLoadProps.Show();
+            lstDistricts.Show();
+            lstNeighbourhoods.Show();
+            lstProperties.Show();
+            btnAddDist.Show();
+            btnEditDist.Show();
+            btnAddNbh.Show();
+            btnEditNbh.Show();
+            btnAddProp.Show();
+            btnEditProp.Show();
+            btnExit.Show();
+            
             // clear data left in listboxes if selecting a second file later
             lstDistricts.Items.Clear();
             lstNeighbourhoods.Items.Clear();
@@ -258,19 +279,20 @@ namespace AirbnbData
 
         private void btnAddNbh_Click(object sender, EventArgs e)
         {
-                // call the district's add new nbh setter
-                Arrays.DistData[lstDistricts.SelectedIndex].setNewNbh("laira");
+            MessageBox.Show("This feature is not yet available.");
+                //// call the district's add new nbh setter
+                //Arrays.DistData[lstDistricts.SelectedIndex].setNewNbh("laira");
 
-                lstNeighbourhoods.Items.Clear();
+                //lstNeighbourhoods.Items.Clear();
 
-                foreach (Neighbourhood newnbh in Arrays.NbhData)
-                {
-                    //get the neighbourhood name
+                //foreach (Neighbourhood newnbh in Arrays.NbhData)
+                //{
+                //    //get the neighbourhood name
 
-                    // put the name in the listbox
-                    lstNeighbourhoods.Items.Add(newnbh.getNbhName());
+                //    // put the name in the listbox
+                //    lstNeighbourhoods.Items.Add(newnbh.getNbhName());
 
-                }
+                //}
         }
 
         private void btnEditNbh_Click(object sender, EventArgs e)
@@ -316,13 +338,14 @@ namespace AirbnbData
 
         private void btnAddProp_Click(object sender, EventArgs e)
         {
-            // make sure a dist and nbh are selected and prop is not
-            if (lstDistricts.SelectedIndex != -1 && lstNeighbourhoods.SelectedIndex != -1 && lstProperties.SelectedIndex == -1)
-            {
-                // open the property maintenance form
-                frmAddProp frmProp = new frmAddProp();
-                frmProp.Show();
-            }
+            MessageBox.Show("This feature is not yet available.");
+            //// make sure a dist and nbh are selected and prop is not
+            //if (lstDistricts.SelectedIndex != -1 && lstNeighbourhoods.SelectedIndex != -1 && lstProperties.SelectedIndex == -1)
+            //{
+            //    // open the property maintenance form
+            //    frmAddProp frmProp = new frmAddProp();
+            //    frmProp.Show();
+            //}
         }
 
         public static string SetTextValuePropID;
