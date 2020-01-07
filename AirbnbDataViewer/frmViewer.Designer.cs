@@ -71,7 +71,7 @@
             this.btnLoadData.TabIndex = 48;
             this.btnLoadData.Text = "Select File";
             this.btnLoadData.UseVisualStyleBackColor = true;
-            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
+            this.btnLoadData.Click += new System.EventHandler(this.BtnLoadData_Click);
             // 
             // imgProperties
             // 
@@ -122,7 +122,7 @@
             this.btnEditNbh.Text = "Edit Neighbourhood";
             this.btnEditNbh.UseVisualStyleBackColor = true;
             this.btnEditNbh.Visible = false;
-            this.btnEditNbh.Click += new System.EventHandler(this.btnEditNbh_Click);
+            this.btnEditNbh.Click += new System.EventHandler(this.BtnEditNbh_Click);
             // 
             // btnEditDist
             // 
@@ -134,7 +134,7 @@
             this.btnEditDist.Text = "Edit District";
             this.btnEditDist.UseVisualStyleBackColor = true;
             this.btnEditDist.Visible = false;
-            this.btnEditDist.Click += new System.EventHandler(this.btnEditDist_Click);
+            this.btnEditDist.Click += new System.EventHandler(this.BtnEditDist_Click);
             // 
             // btnAddNbh
             // 
@@ -146,7 +146,7 @@
             this.btnAddNbh.Text = "Add Neighbourhood";
             this.btnAddNbh.UseVisualStyleBackColor = true;
             this.btnAddNbh.Visible = false;
-            this.btnAddNbh.Click += new System.EventHandler(this.btnAddNbh_Click);
+            this.btnAddNbh.Click += new System.EventHandler(this.BtnAddNbh_Click);
             // 
             // btnAddDist
             // 
@@ -158,7 +158,7 @@
             this.btnAddDist.Text = "Add District";
             this.btnAddDist.UseVisualStyleBackColor = true;
             this.btnAddDist.Visible = false;
-            this.btnAddDist.Click += new System.EventHandler(this.btnAddDist_Click);
+            this.btnAddDist.Click += new System.EventHandler(this.BtnAddDist_Click);
             // 
             // lstProperties
             // 
@@ -181,7 +181,7 @@
             this.lstNeighbourhoods.Size = new System.Drawing.Size(282, 199);
             this.lstNeighbourhoods.TabIndex = 38;
             this.lstNeighbourhoods.Visible = false;
-            this.lstNeighbourhoods.SelectedIndexChanged += new System.EventHandler(this.lstNeighbourhoods_SelectedIndexChanged);
+            this.lstNeighbourhoods.SelectedIndexChanged += new System.EventHandler(this.LstNeighbourhoods_SelectedIndexChanged);
             // 
             // lstDistricts
             // 
@@ -193,7 +193,7 @@
             this.lstDistricts.Size = new System.Drawing.Size(282, 199);
             this.lstDistricts.TabIndex = 37;
             this.lstDistricts.Visible = false;
-            this.lstDistricts.SelectedIndexChanged += new System.EventHandler(this.lstDistricts_SelectedIndexChanged);
+            this.lstDistricts.SelectedIndexChanged += new System.EventHandler(this.LstDistricts_SelectedIndexChanged);
             // 
             // openFileDialog1
             // 
@@ -209,7 +209,7 @@
             this.btnAddProp.Text = "Add Property";
             this.btnAddProp.UseVisualStyleBackColor = true;
             this.btnAddProp.Visible = false;
-            this.btnAddProp.Click += new System.EventHandler(this.btnAddProp_Click);
+            this.btnAddProp.Click += new System.EventHandler(this.BtnAddProp_Click);
             // 
             // btnExit
             // 
@@ -221,7 +221,7 @@
             this.btnExit.Text = "Save and Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Visible = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // btnEditProp
             // 
@@ -230,7 +230,7 @@
             this.btnEditProp.Name = "btnEditProp";
             this.btnEditProp.Size = new System.Drawing.Size(160, 25);
             this.btnEditProp.TabIndex = 54;
-            this.btnEditProp.Text = "View and Edit Property";
+            this.btnEditProp.Text = "View Details";
             this.btnEditProp.UseVisualStyleBackColor = true;
             this.btnEditProp.Visible = false;
             this.btnEditProp.Click += new System.EventHandler(this.BtnEditProp_Click);

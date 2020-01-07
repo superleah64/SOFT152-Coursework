@@ -8,8 +8,8 @@ namespace AirbnbData
 {
     class Arrays
     {
-        public static District[] DistData = new District[0];
-        public static Neighbourhood[] NbhData = new Neighbourhood[0];
-        public static Property[] PropData = new Property[0];
+        public static District[] DistArray = new District[0];
+        public static Neighbourhood[] NbhArray = new Neighbourhood[0];
+        public static Property[] PropArray = new Property[0];
     }
 }

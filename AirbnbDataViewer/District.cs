@@ -44,9 +44,9 @@ namespace AirbnbData
         public void setNewNbh(string nbhname)
         {
             Neighbourhood TempNBH = new Neighbourhood("laira");
-            int newnbhSize = Arrays.NbhData.Length;
-            Array.Resize(ref Arrays.NbhData, newnbhSize + 1);
-            Arrays.NbhData[newnbhSize] = TempNBH;
+            int newnbhSize = Arrays.NbhArray.Length;
+            Array.Resize(ref Arrays.NbhArray, newnbhSize + 1);
+            Arrays.NbhArray[newnbhSize] = TempNBH;
             distNumNbh = distNumNbh + 1;
         }
 

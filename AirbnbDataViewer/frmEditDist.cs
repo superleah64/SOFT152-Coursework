@@ -15,7 +15,6 @@ namespace AirbnbData
         public frmEditDist()
         {
             InitializeComponent();
-
         }
         public static string SetTextValueDist = "";
 

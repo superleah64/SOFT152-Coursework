@@ -16,5 +16,15 @@ namespace AirbnbDataViewer
         {
             InitializeComponent();
         }
+        public static string SetTextValueNbh;
+        private void btnDoneDist_Click(object sender, EventArgs e)
+        {
+            if (txtAddNbh.Text != "")
+            {
+                SetTextValueNbh = txtAddNbh.Text;
+            }
+            else MessageBox.Show("Please enter a name.");
+            this.Close();
+        }
     }
 }
